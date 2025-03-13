@@ -6,11 +6,6 @@ import lombok.*;
 
 @Entity
 @Table(name = "account") // MySQL is case-insensitive for table names
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 public class Account implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,4 +19,41 @@ public class Account implements Serializable {
 
     @Column(nullable = false)
     private double balance;
+
+	public Account(Long id, String name, double balance) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.balance = balance;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+    
+    
 }

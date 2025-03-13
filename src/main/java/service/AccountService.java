@@ -5,6 +5,8 @@ import entity.Account;
 
 public interface AccountService {
 	
-	Account createAccount(AccountDto accountdto);
+	//Account createAccount(Account account);
+
+	AccountDto createAccount(AccountDto accountdto);
 
 }
