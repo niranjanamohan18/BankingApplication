@@ -8,5 +8,7 @@ public interface AccountService {
 	//Account createAccount(Account account);
 
 	AccountDto createAccount(AccountDto accountdto);
+	
+	AccountDto getAccountById(Long id);
 
 }

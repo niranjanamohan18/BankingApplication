@@ -28,4 +28,14 @@ public class AccountServiceImpl implements AccountService{
 		return AccountMapper.maptoAccountDto(savedAccount);
 	}
 
+
+	@Override
+	public AccountDto getAccountById(Long id) {
+		
+		Account account = accountrepo.findById(id).orElseThrow(() -> new RuntimeException("Account does not exist"));
+		return AccountMapper.maptoAccountDto(account);
+	}
+	
+	
+
 }
