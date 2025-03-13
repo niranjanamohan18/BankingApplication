@@ -1,5 +1,8 @@
 package service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 
 import dto.AccountDto;
@@ -63,6 +66,19 @@ public class AccountServiceImpl implements AccountService{
 		
 		return AccountMapper.maptoAccountDto(savedAccount);
 	}
+
+
+	@Override
+	public List<AccountDto> getAllAccounts() {
+		
+		List<Account> accounts = accountrepo.findAll();
+		
+		return accounts.stream().map((account) -> AccountMapper.maptoAccountDto(account)).collect(Collectors.toList());
+		
+		 
+	}
+	
+	
 	
 	
 
